@@ -58,10 +58,13 @@ function updateLocalStorage() {
 // Display the shopping list
 function displayList() {
     shoppingListContainer.innerHTML = "";
+    // Check if shoppingList is empty
     if (shoppingList.length === 0) {
         const emptyMessage = createElement("div", { class: "empty-list-message" }, "Die Einkaufsliste ist leer.");
         shoppingListContainer.appendChild(emptyMessage);
-    } else {
+    }
+    // Render items if shoppingList is not empty
+    else {
         shoppingList.forEach((item, index) => {
             const itemContainer = createElement("div", { class: "item-container" });
             const itemGridContainer = createElement("div", { class: "item-grid-container" });
